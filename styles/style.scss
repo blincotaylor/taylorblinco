@@ -1,0 +1,216 @@
+@import "./resets";
+@import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=Roboto+Mono:wght@300;400;500&display=swap");
+
+// Functions & Mixins
+
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@mixin flex($direction, $gap) {
+  display: flex;
+  gap: $gap;
+  flex-direction: $direction;
+}
+
+// ----------
+// Main Styles
+// ----------
+
+// Utility
+.bg-dark-1 {
+  background-color: color(dark-1);
+}
+
+.fw-extra-light {
+  font-weight: weight(extra-light);
+}
+
+.fw-light {
+  font-weight: weight(light);
+}
+
+.fw-medium {
+  font-weight: weight(regular);
+}
+
+.fw-medium-bold {
+  font-weight: weight(medium-bold);
+}
+
+.fw-bold {
+  font-weight: weight(bold);
+}
+
+.fw-extra-bold {
+  font-weight: weight(extra-bold);
+}
+
+.fw-stark {
+  font-weight: weight(stark);
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.full-center {
+  display: grid;
+  place-items: center;
+}
+
+.sr-only {
+  color: transparent;
+  // display: none;
+}
+
+// Main
+
+body {
+  overflow-x: hidden;
+}
+
+.navigation {
+  @include flex(row, 1.5rem);
+  counter-reset: link -1;
+  justify-content: flex-end;
+
+  padding: 1rem;
+  margin: 0;
+  background-color: color(mid-2);
+  list-style: none;
+
+  &-toggle {
+    display: none;
+  }
+
+  &__li {
+    counter-increment: link;
+  }
+
+  &__link {
+    position: relative;
+
+    text-decoration: none;
+    color: color(dark-2);
+    font-weight: map-get($font-weights, bold);
+    font-family: $font-mono, monospace;
+    font-size: 1.25rem;
+
+    transition: color 0.4s ease-in-out;
+
+    &:hover {
+      color: color(light-2);
+      transition: color 0.4s ease-in-out;
+    }
+
+    &::before {
+      position: absolute;
+      top: -0.8rem;
+      left: -0.25rem;
+      content: "0" counter(link);
+
+      font-size: 0.75rem;
+    }
+  }
+}
+
+@supports (backdrop-filter: blur()) {
+  .navigation {
+    background-color: hsl(0 0 60% / 0.1);
+    backdrop-filter: blur(1.75rem);
+
+    &__link {
+      color: color(light-2);
+      font-weight: map-get($font-weights, light);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .navigation {
+    @include flex(column, 2.5rem);
+    justify-content: initial;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+    margin: 0;
+    padding: min(20vh, 7.5rem) 1.5rem;
+    height: 100vh;
+
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.5, 0, 0.5, 1);
+
+    &[data-visible="true"] {
+      transform: translateX(0%);
+    }
+
+    &-toggle {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      z-index: 9999;
+      background-color: transparent;
+      background-image: url("/assets/images/icon-hamburger.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 1.5rem;
+      border: 0;
+      aspect-ratio: 1;
+      top: 2rem;
+      right: 2rem;
+
+      transition: all 0.35s cubic-bezier(0.5, 0, 0.5, 1);
+
+      &[aria-expanded="true"] {
+        background-image: url("/assets/images/icon-close.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+}
+
+.hoverstate {
+  color: color(mid-1);
+
+  transition: color 0.4s ease-in-out;
+}
+
+.introduction {
+  // @include flex(column, 0.2rem);
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+  border-color: color(mid-2);
+  margin: 7.5rem 0 0 2rem;
+  padding: 2rem;
+  width: 20vw;
+  white-space: nowrap;
+
+  p {
+    color: color(light-2);
+    white-space: normal;
+    width: 80vw;
+
+    font-family: $font-sans-1;
+  }
+
+  h1 {
+    font-family: $font-serif;
+    color: color(light-1);
+    margin-bottom: 1rem;
+  }
+}

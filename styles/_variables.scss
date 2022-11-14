@@ -1,0 +1,28 @@
+// Colors
+
+$colors: (
+  "dark-1": hsl(0, 0%, 16%),
+  "dark-2": hsl(0, 0%, 25%),
+  "mid-1": hsl(0, 0%, 54%),
+  "mid-2": hsl(0, 0%, 60%),
+  "light-1": hsl(0, 0%, 79%),
+  "light-2": hsl(0, 0%, 89%),
+  "highlight": hsl(189, 79%, 66%),
+);
+
+// Fonts
+
+$font-sans-1: "MontSerrat", sans-serif;
+$font-sans-2: "Lato", sans-serif;
+$font-serif: "Playfair Display", serif;
+$font-mono: "Roboto Mono", monospace;
+
+$font-weights: (
+  "extra-light": 300,
+  "light": 400,
+  "regular": 500,
+  "medium-bold": 600,
+  "bold": 700,
+  "extra-bold": 800,
+  "stark": 900,
+);
