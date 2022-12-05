@@ -72,11 +72,6 @@
   place-items: center;
 }
 
-.sr-only {
-  color: transparent;
-  // display: none;
-}
-
 // Main
 
 body {
@@ -85,10 +80,12 @@ body {
 
 .navigation {
   @include flex(row, 1.5rem);
+  position: fixed;
+  width: 100vw;
   counter-reset: link -1;
   justify-content: flex-end;
 
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 1rem;
   margin: 0;
   background-color: color(mid-2);
   list-style: none;
@@ -130,23 +127,75 @@ body {
 
 @supports (backdrop-filter: blur()) {
   .navigation {
-    background-color: hsl(0 0 60% / 0.1);
+    background-color: hsl(0deg 0% 60% / 0.1);
     backdrop-filter: blur(1.75rem);
 
     &__link {
       color: color(light-2);
-      font-weight: map-get($font-weights, light);
+      font-weight: map-get($font-weights, extra-light);
     }
   }
 }
 
+.hoverstate {
+  color: color(mid-1);
+
+  transition: color 0.4s ease-in-out;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 10rem 0 0 2rem;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.25rem;
+}
+
+.introduction {
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+  border-color: color(mid-2);
+  padding: 2rem;
+  width: 15vw;
+  white-space: nowrap;
+
+  p {
+    color: color(light-2);
+    white-space: normal;
+    width: 60vw;
+
+    font-family: $font-sans-1;
+  }
+
+  .main-title {
+    font-family: $font-serif;
+    color: color(light-1);
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 500px) {
+  .hero {
+    width: 100%;
+    margin: 40% 5%;
+    padding: 0 0 0 0;
+    font-size: 1rem;
+    padding: 0 !important;
+  }
+
+  .introduction {
+    .main-title {
+      font-size: 1rem;
+    }
+  }
+
   .navigation {
     @include flex(column, 2.5rem);
     justify-content: initial;
     position: fixed;
     z-index: 1000;
-    inset: 0 0 0 30%;
+    inset: 0 0 0 20%;
     margin: 0;
     padding: min(20vh, 7.5rem) 1.5rem;
     height: 100vh;
@@ -159,58 +208,60 @@ body {
     }
 
     &-toggle {
-      cursor: pointer;
       display: block;
-      position: absolute;
-      z-index: 9999;
       background-color: transparent;
-      background-image: url("/assets/images/icon-hamburger.svg");
-      background-repeat: no-repeat;
-      background-size: cover;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      cursor: pointer;
+      z-index: 9999;
+
       width: 1.5rem;
       border: 0;
       aspect-ratio: 1;
-      top: 2rem;
-      right: 2rem;
-
-      transition: all 0.35s cubic-bezier(0.5, 0, 0.5, 1);
 
       &[aria-expanded="true"] {
-        background-image: url("/assets/images/icon-close.svg");
-        background-repeat: no-repeat;
-        background-size: cover;
+        & .navigation-toggle__bar {
+          opacity: 0;
+        }
+
+        & .bar-top {
+          transform: translate(-50%, -50%) rotate(-315deg);
+          top: 50%;
+        }
+
+        & .bar-bottom {
+          transform: translate(-50%, -50%) rotate(-225deg);
+          top: 50%;
+        }
+      }
+      &__bar,
+      & .bar-top,
+      & .bar-bottom {
+        width: 1.75rem;
+        height: 3px;
+        background-color: color(light-2);
+        border-radius: 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.4s, opacity 0.2s, top 0.4s;
+      }
+
+      & .bar-top {
+        top: 15%;
+      }
+
+      & .bar-bottom {
+        top: 85%;
+      }
+
+      .introduction {
+        p {
+          width: unset;
+        }
       }
     }
-  }
-}
-
-.hoverstate {
-  color: color(mid-1);
-
-  transition: color 0.4s ease-in-out;
-}
-
-.introduction {
-  // @include flex(column, 0.2rem);
-  border-width: 1px 0 1px 1px;
-  border-style: solid;
-  border-color: color(mid-2);
-  margin: 7.5rem 0 0 2rem;
-  padding: 2rem;
-  width: 20vw;
-  white-space: nowrap;
-
-  p {
-    color: color(light-2);
-    white-space: normal;
-    width: 80vw;
-
-    font-family: $font-sans-1;
-  }
-
-  h1 {
-    font-family: $font-serif;
-    color: color(light-1);
-    margin-bottom: 1rem;
   }
 }

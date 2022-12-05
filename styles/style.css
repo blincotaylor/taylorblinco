@@ -7,17 +7,10 @@
 }
 
 /* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+* {
   margin: 0;
+  padding: 0;
+  font-size: inherit;
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
@@ -123,10 +116,6 @@ select {
   place-items: center;
 }
 
-.sr-only {
-  color: transparent;
-}
-
 body {
   overflow-x: hidden;
 }
@@ -135,9 +124,11 @@ body {
   display: flex;
   gap: 1.5rem;
   flex-direction: row;
+  position: fixed;
+  width: 100vw;
   counter-reset: link -1;
   justify-content: flex-end;
-  padding: 1rem;
+  padding: 1rem 2rem 1rem 1rem;
   margin: 0;
   background-color: hsl(0deg, 0%, 60%);
   list-style: none;
@@ -177,10 +168,54 @@ body {
   }
   .navigation__link {
     color: hsl(0deg, 0%, 89%);
-    font-weight: 400;
+    font-weight: 300;
   }
 }
+.hoverstate {
+  color: hsl(0deg, 0%, 54%);
+  transition: color 0.4s ease-in-out;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 10rem 0 0 2rem;
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.25rem;
+}
+
+.introduction {
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+  border-color: hsl(0deg, 0%, 60%);
+  padding: 2rem;
+  width: 15vw;
+  white-space: nowrap;
+}
+.introduction p {
+  color: hsl(0deg, 0%, 89%);
+  white-space: normal;
+  width: 60vw;
+  font-family: "MontSerrat", sans-serif;
+}
+.introduction .main-title {
+  font-family: "Playfair Display", serif;
+  color: hsl(0deg, 0%, 79%);
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
 @media (max-width: 500px) {
+  .hero {
+    width: 100%;
+    margin: 40% 5%;
+    padding: 0 0 0 0;
+    font-size: 1rem;
+    padding: 0 !important;
+  }
+  .introduction .main-title {
+    font-size: 1rem;
+  }
   .navigation {
     display: flex;
     gap: 2.5rem;
@@ -188,7 +223,7 @@ body {
     justify-content: initial;
     position: fixed;
     z-index: 1000;
-    inset: 0 0 0 30%;
+    inset: 0 0 0 20%;
     margin: 0;
     padding: min(20vh, 7.5rem) 1.5rem;
     height: 100vh;
@@ -199,49 +234,46 @@ body {
     transform: translateX(0%);
   }
   .navigation-toggle {
-    cursor: pointer;
     display: block;
-    position: absolute;
-    z-index: 9999;
     background-color: transparent;
-    background-image: url("/assets/images/icon-hamburger.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 9999;
     width: 1.5rem;
     border: 0;
     aspect-ratio: 1;
-    top: 2rem;
-    right: 2rem;
-    transition: all 0.35s cubic-bezier(0.5, 0, 0.5, 1);
   }
-  .navigation-toggle[aria-expanded=true] {
-    background-image: url("/assets/images/icon-close.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  .navigation-toggle[aria-expanded=true] .navigation-toggle__bar {
+    opacity: 0;
   }
-}
-.hoverstate {
-  color: hsl(0deg, 0%, 54%);
-  transition: color 0.4s ease-in-out;
-}
-
-.introduction {
-  border-width: 1px 0 1px 1px;
-  border-style: solid;
-  border-color: hsl(0deg, 0%, 60%);
-  margin: 7.5rem 0 0 2rem;
-  padding: 2rem;
-  width: 20vw;
-  white-space: nowrap;
-}
-.introduction p {
-  color: hsl(0deg, 0%, 89%);
-  white-space: normal;
-  width: 80vw;
-  font-family: "MontSerrat", sans-serif;
-}
-.introduction h1 {
-  font-family: "Playfair Display", serif;
-  color: hsl(0deg, 0%, 79%);
-  margin-bottom: 1rem;
+  .navigation-toggle[aria-expanded=true] .bar-top {
+    transform: translate(-50%, -50%) rotate(-315deg);
+    top: 50%;
+  }
+  .navigation-toggle[aria-expanded=true] .bar-bottom {
+    transform: translate(-50%, -50%) rotate(-225deg);
+    top: 50%;
+  }
+  .navigation-toggle__bar, .navigation-toggle .bar-top, .navigation-toggle .bar-bottom {
+    width: 1.75rem;
+    height: 3px;
+    background-color: hsl(0deg, 0%, 89%);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s, opacity 0.2s, top 0.4s;
+  }
+  .navigation-toggle .bar-top {
+    top: 15%;
+  }
+  .navigation-toggle .bar-bottom {
+    top: 85%;
+  }
+  .navigation-toggle .introduction p {
+    width: unset;
+  }
 }/*# sourceMappingURL=style.css.map */
