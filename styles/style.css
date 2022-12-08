@@ -118,6 +118,7 @@ select {
 
 body {
   overflow-x: hidden;
+  min-height: 100%;
 }
 
 .navigation {
@@ -183,6 +184,13 @@ body {
   margin: 0 auto;
   font-size: 1.25rem;
 }
+.hero .scroll-down {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-self: flex-end;
+}
 
 .introduction {
   border-width: 1px 0 1px 1px;
@@ -207,9 +215,9 @@ body {
 
 @media (max-width: 500px) {
   .hero {
-    width: 100%;
-    margin: 40% 5%;
-    padding: 0 0 0 0;
+    width: 95%;
+    min-height: 100%;
+    margin: 40% 0 0 5%;
     font-size: 1rem;
     padding: 0 !important;
   }
