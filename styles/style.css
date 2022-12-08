@@ -178,17 +178,12 @@ body {
 }
 
 main {
-  height: 72.5vh;
+  height: 70vh;
   display: flex;
   gap: 10rem;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
-main p {
-  color: hsl(0deg, 0%, 89%);
-  white-space: normal;
-  font-family: "MontSerrat", sans-serif;
 }
 
 .hero {
@@ -215,7 +210,10 @@ main p {
   white-space: nowrap;
 }
 .introduction p {
+  color: hsl(0deg, 0%, 89%);
+  white-space: normal;
   width: 60vw;
+  font-family: "MontSerrat", sans-serif;
 }
 .introduction .main-title {
   font-family: "Playfair Display", serif;
@@ -224,8 +222,15 @@ main p {
   font-size: 2.5rem;
 }
 
+.type-text {
+  color: hsl(0deg, 0%, 89%);
+  white-space: normal;
+  font-size: 0.85rem;
+  font-family: "Roboto Mono", monospace;
+}
 .type-text::after {
   content: "|";
+  font-size: 1.2rem;
   -webkit-animation: blink 1s infinite;
           animation: blink 1s infinite;
 }

@@ -147,17 +147,10 @@ body {
 }
 
 main {
-  height: 72.5vh;
+  height: 70vh;
   @include flex(column,10rem);
   justify-content: space-between;
   align-items: center;
-
-  p {
-    color: color(light-2);
-    white-space: normal;
-
-    font-family: $font-sans-1;
-  }
 }
 
 .hero {
@@ -184,7 +177,11 @@ main {
   white-space: nowrap;
 
   p {
+    color: color(light-2);
+    white-space: normal;
     width: 60vw;
+
+    font-family: $font-sans-1;
   }
 
   .main-title {
@@ -196,8 +193,14 @@ main {
 }
 
 .type-text {
+    color: color(light-2);
+    white-space: normal;
+    font-size: .85rem;
+    font-family: $font-mono;
+
   &::after {
     content: "|";
+    font-size: 1.2rem;
     animation: blink 1s infinite;
   }
 }
