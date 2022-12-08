@@ -177,8 +177,22 @@ body {
   transition: color 0.4s ease-in-out;
 }
 
+main {
+  height: 72.5vh;
+  display: flex;
+  gap: 10rem;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+main p {
+  color: hsl(0deg, 0%, 89%);
+  white-space: normal;
+  font-family: "MontSerrat", sans-serif;
+}
+
 .hero {
-  min-height: 100vh;
+  min-height: 100%;
   padding: 10rem 0 0 2rem;
   width: 70%;
   margin: 0 auto;
@@ -201,10 +215,7 @@ body {
   white-space: nowrap;
 }
 .introduction p {
-  color: hsl(0deg, 0%, 89%);
-  white-space: normal;
   width: 60vw;
-  font-family: "MontSerrat", sans-serif;
 }
 .introduction .main-title {
   font-family: "Playfair Display", serif;
@@ -213,7 +224,37 @@ body {
   font-size: 2.5rem;
 }
 
+.type-text::after {
+  content: "|";
+  -webkit-animation: blink 1s infinite;
+          animation: blink 1s infinite;
+}
+
+@-webkit-keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
 @media (max-width: 500px) {
+  main {
+    height: 50vh;
+    display: flex;
+    gap: 10rem;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .hero {
     width: 95%;
     min-height: 100%;

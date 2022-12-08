@@ -79,6 +79,8 @@ body {
   min-height: 100%;
 }
 
+
+
 .navigation {
   @include flex(row, 1.5rem);
   position: fixed;
@@ -144,8 +146,22 @@ body {
   transition: color 0.4s ease-in-out;
 }
 
+main {
+  height: 72.5vh;
+  @include flex(column,10rem);
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    color: color(light-2);
+    white-space: normal;
+
+    font-family: $font-sans-1;
+  }
+}
+
 .hero {
-  min-height: 100vh;
+  min-height: 100%;
   padding: 10rem 0 0 2rem;
   width: 70%;
   margin: 0 auto;
@@ -168,11 +184,7 @@ body {
   white-space: nowrap;
 
   p {
-    color: color(light-2);
-    white-space: normal;
     width: 60vw;
-
-    font-family: $font-sans-1;
   }
 
   .main-title {
@@ -183,7 +195,25 @@ body {
   }
 }
 
+.type-text {
+  &::after {
+    content: "|";
+    animation: blink 1s infinite;
+  }
+}
+
+@keyframes blink {
+  0%, 100% {opacity: 1;}
+  50% {opacity: 0;}
+}
+
 @media (max-width: 500px) {
+  main {
+    height: 50vh;
+    @include flex(column,10rem);
+    justify-content: space-between;
+  }
+
   .hero {
     width: 95%;
     min-height: 100%;
