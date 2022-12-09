@@ -154,7 +154,7 @@ body {
   transition: opacity 0.4s ease-in-out;
 }
 .navigation__link::before {
-  color: hsl(207deg, 100%, 55%);
+  color: hsl(60deg, 90%, 35%);
   position: absolute;
   top: -0.8rem;
   left: -0.25rem;
@@ -178,16 +178,12 @@ body {
   transition: opacity 0.4s ease-in-out;
 }
 
-main {
-  height: 70vh;
+.hero {
+  height: 100vh;
   display: flex;
   gap: 10rem;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-}
-
-.hero {
   min-height: 100%;
   padding: 10rem 0 0 2rem;
   width: 70%;
@@ -199,7 +195,8 @@ main {
   gap: 1rem;
   flex-direction: row;
   flex-wrap: wrap;
-  align-self: flex-end;
+  align-self: center;
+  margin-bottom: 1rem;
 }
 
 .introduction {
@@ -218,7 +215,7 @@ main {
 }
 .introduction .main-title {
   font-family: "Playfair Display", serif;
-  color: hsl(207deg, 100%, 55%);
+  color: hsl(60deg, 90%, 35%);
   margin-bottom: 1rem;
   font-size: 2.5rem;
 }
@@ -226,12 +223,12 @@ main {
 .type-text {
   color: hsl(0deg, 0%, 89%);
   white-space: normal;
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   font-family: "Roboto Mono", monospace;
 }
 .type-text::after {
   content: "|";
-  color: hsl(207deg, 100%, 55%);
+  color: hsl(60deg, 90%, 35%);
   font-size: 1.2rem;
   -webkit-animation: blink 1s infinite;
           animation: blink 1s infinite;
@@ -255,22 +252,21 @@ main {
   }
 }
 @media (max-width: 500px) {
-  main {
-    height: 50vh;
-    display: flex;
-    gap: 10rem;
-    flex-direction: column;
-    justify-content: space-between;
-  }
   .hero {
     width: 95%;
-    min-height: 100%;
+    height: 80vh;
     margin: 40% 0 0 5%;
     font-size: 1rem;
     padding: 0 !important;
   }
+  .hero .scroll-down {
+    margin-bottom: 4rem;
+  }
   .introduction .main-title {
     font-size: 1.5rem;
+  }
+  .type-text {
+    font-size: 0.85rem;
   }
   .navigation {
     display: flex;
@@ -332,4 +328,22 @@ main {
   .navigation-toggle .introduction p {
     width: unset;
   }
+}
+.work {
+  display: grid;
+  gap: 1.5rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.work__item {
+  position: relative;
+  background: linear-gradient(to bottom, hsla(60deg, 90%, 35%, 0.438), hsla(60deg, 90%, 35%, 0.438));
+  border-radius: 5px;
+}
+
+.work__img {
+  position: relative;
+  z-index: -1;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */
