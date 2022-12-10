@@ -152,14 +152,10 @@ body {
   transition: opacity 0.4s ease-in-out;
 }
 
-main {
-  
-}
-
 .hero {
   height: 100vh;
   @include flex(column,10rem);
-  justify-content: space-between;
+  justify-content: space-around;
   // align-items: center;
 
   min-height: 100%;
@@ -173,7 +169,7 @@ main {
     @include flex(row, 1rem);
     flex-wrap: wrap;
     align-self: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -322,18 +318,43 @@ main {
 
 .work {
   @include grid(1.5rem);
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  margin: 5rem auto;
 }
 
 .work__item {
   position: relative;
-  background: linear-gradient(to bottom, color(highlight-2), color(highlight-2));
+  background-color: color(highlight-2);
   border-radius: 5px;
+  transition: all 1s ease-in-out;
+
+  &:hover,
+  &:active {
+    background-color: transparent;
+    transition: all 1s ease-in-out;
+  }
 }
 
 .work__img {
   position: relative;
   z-index: -1;
   border-radius: 5px;
+}
+
+@media (min-width: 550px) {
+  .work {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .work {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1700px) {
+  .work {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
