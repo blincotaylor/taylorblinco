@@ -263,7 +263,7 @@ body {
     margin-bottom: 4rem;
   }
   .introduction .main-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   .type-text {
     font-size: 0.85rem;
@@ -329,13 +329,34 @@ body {
     width: unset;
   }
 }
+.highlight {
+  color: hsl(60deg, 90%, 35%);
+}
+
+.subtitle {
+  font-family: "Playfair Display", serif;
+  color: hsl(0deg, 0%, 89%);
+  font-size: 1.5rem;
+}
+
 .work {
-  display: grid;
-  gap: 1.5rem;
   width: 90%;
   margin: 5rem auto;
 }
-
+.work__title {
+  text-align: center;
+  margin: 1.25rem 0;
+}
+.work__copy {
+  color: hsl(0deg, 0%, 89%);
+  font-family: "MontSerrat", sans-serif;
+  font-size: 1rem;
+}
+.work__items {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 .work__item {
   position: relative;
   background-color: hsla(60deg, 90%, 35%, 0.301);
@@ -346,7 +367,6 @@ body {
   background-color: transparent;
   transition: all 1s ease-in-out;
 }
-
 .work__img {
   position: relative;
   z-index: -1;
@@ -354,17 +374,17 @@ body {
 }
 
 @media (min-width: 550px) {
-  .work {
+  .work__items {
     grid-template-columns: 1fr 1fr;
   }
 }
 @media (min-width: 1000px) {
-  .work {
+  .work__items {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 1700px) {
-  .work {
+  .work__items {
     grid-template-columns: repeat(4, 1fr);
   }
 }/*# sourceMappingURL=style.css.map */

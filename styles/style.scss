@@ -232,7 +232,7 @@ body {
 
   .introduction {
     .main-title {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
     }
   }
 
@@ -316,14 +316,38 @@ body {
   }
 }
 
-.work {
-  @include grid(1.5rem);
-  width: 90%;
-  margin: 5rem auto;
+.highlight {
+  color: color(highlight);
 }
 
-.work__item {
-  position: relative;
+.subtitle {
+  font-family: $font-serif;
+  color: color(light-2);
+  font-size: 1.5rem;
+}
+
+.work {
+  width: 90%;
+  margin: 5rem auto;
+
+  &__title {
+    text-align: center;
+    margin: 1.25rem 0;
+  }
+
+  &__copy {
+    color: color(light-2);
+    font-family: $font-sans-1;
+    font-size: 1rem;
+  }
+
+  &__items {
+    @include grid(1.5rem);
+    margin-top: 2rem;
+  }
+
+  &__item {
+    position: relative;
   background-color: color(highlight-2);
   border-radius: 5px;
   transition: all 1s ease-in-out;
@@ -333,28 +357,29 @@ body {
     background-color: transparent;
     transition: all 1s ease-in-out;
   }
-}
+  };
 
-.work__img {
-  position: relative;
-  z-index: -1;
-  border-radius: 5px;
+  &__img {
+    position: relative;
+    z-index: -1;
+    border-radius: 5px;
+  }
 }
 
 @media (min-width: 550px) {
-  .work {
+  .work__items {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 1000px) {
-  .work {
+  .work__items {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media (min-width: 1700px) {
-  .work {
+  .work__items {
     grid-template-columns: repeat(4, 1fr);
   }
 }
