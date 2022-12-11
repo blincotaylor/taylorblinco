@@ -116,6 +116,10 @@ select {
   place-items: center;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   min-height: 100%;

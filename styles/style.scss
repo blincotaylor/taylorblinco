@@ -79,12 +79,14 @@
 
 // Main
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   overflow-x: hidden;
   min-height: 100%;
 }
-
-
 
 .navigation {
   @include flex(row, 1.5rem);
