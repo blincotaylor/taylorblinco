@@ -175,17 +175,38 @@ body {
 }
 
 .introduction {
-  border-width: 1px 0 1px 1px;
-  border-style: solid;
-  border-color: color(mid-2);
+  // border-width: 1px 0 1px 1px;
+  // border-style: solid;
+  // border-color: color(mid-2);
   padding: 2rem;
-  width: 15vw;
-  white-space: nowrap;
+  // width: 15vw;
+  // white-space: nowrap;
+  position: relative;
+
+  &:before {
+    content: "";
+    background: color(mid-2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60%;
+    height: 1px;
+  }
+
+  &:after {
+    content: "";
+    background: color(mid-2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+  }
 
   p {
     color: color(light-2);
     white-space: normal;
-    width: 70vw;
+    // width: 70vw;
 
     font-family: $font-sans-1;
   }
@@ -266,7 +287,7 @@ body {
     &-toggle {
       display: block;
       background-color: transparent;
-      position: absolute;
+      position: fixed;
       top: 2rem;
       right: 2rem;
       cursor: pointer;
@@ -294,7 +315,7 @@ body {
       &__bar,
       & .bar-top,
       & .bar-bottom {
-        width: 1.75rem;
+        width: 1.5rem;
         height: 3px;
         background-color: color(light-2);
         border-radius: 5px;
@@ -317,6 +338,7 @@ body {
         p {
           width: unset;
         }
+        
       }
     }
   }

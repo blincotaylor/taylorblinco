@@ -159,7 +159,7 @@ body {
   transition: opacity 0.4s ease-in-out;
 }
 .navigation__link::before {
-  color: hsl(60deg, 90%, 35%);
+  color: hsl(212deg, 100%, 65%);
   position: absolute;
   top: -0.8rem;
   left: -0.25rem;
@@ -205,22 +205,35 @@ body {
 }
 
 .introduction {
-  border-width: 1px 0 1px 1px;
-  border-style: solid;
-  border-color: hsl(0deg, 0%, 60%);
   padding: 2rem;
-  width: 15vw;
-  white-space: nowrap;
+  position: relative;
+}
+.introduction:before {
+  content: "";
+  background: hsl(0deg, 0%, 60%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 1px;
+}
+.introduction:after {
+  content: "";
+  background: hsl(0deg, 0%, 60%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 1px;
 }
 .introduction p {
   color: hsl(0deg, 0%, 89%);
   white-space: normal;
-  width: 70vw;
   font-family: "MontSerrat", sans-serif;
 }
 .introduction .main-title {
   font-family: "Playfair Display", serif;
-  color: hsl(60deg, 90%, 35%);
+  color: hsl(212deg, 100%, 65%);
   margin-bottom: 1rem;
   font-size: 2.5rem;
 }
@@ -234,7 +247,7 @@ body {
 .type-text::after {
   position: relative;
   content: "|";
-  color: hsl(60deg, 90%, 35%);
+  color: hsl(212deg, 100%, 65%);
   font-size: 1.3rem;
   -webkit-animation: blink 1s infinite;
           animation: blink 1s infinite;
@@ -297,7 +310,7 @@ body {
   .navigation-toggle {
     display: block;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     top: 2rem;
     right: 2rem;
     cursor: pointer;
@@ -318,7 +331,7 @@ body {
     top: 50%;
   }
   .navigation-toggle__bar, .navigation-toggle .bar-top, .navigation-toggle .bar-bottom {
-    width: 1.75rem;
+    width: 1.5rem;
     height: 3px;
     background-color: hsl(0deg, 0%, 89%);
     border-radius: 5px;
@@ -339,7 +352,7 @@ body {
   }
 }
 .highlight {
-  color: hsl(60deg, 90%, 35%);
+  color: hsl(212deg, 100%, 65%);
 }
 
 .subtitle {
@@ -372,14 +385,14 @@ body {
   background-size: 100%;
   border-radius: 5px;
   transform: scale(1);
-  box-shadow: hsla(60deg, 90%, 35%, 0.301) 0px 8px 24px;
+  box-shadow: hsla(212deg, 100%, 65%, 0.301) 0px 8px 24px;
   transition: all 0.5s ease-in-out;
 }
 .work__item:hover, .work__item:active {
   border: none;
   background-color: transparent;
   transform: scale(1.05);
-  box-shadow: hsl(60deg, 90%, 35%) 0px 13px 27px -5px, hsla(60deg, 90%, 35%, 0.301) 0px 8px 16px -8px;
+  box-shadow: hsl(212deg, 100%, 65%) 0px 13px 27px -5px, hsla(212deg, 100%, 65%, 0.301) 0px 8px 16px -8px;
   transition: all 0.5s ease-in-out;
 }
 .work__img {
