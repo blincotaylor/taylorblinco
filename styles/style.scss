@@ -175,12 +175,7 @@ body {
 }
 
 .introduction {
-  // border-width: 1px 0 1px 1px;
-  // border-style: solid;
-  // border-color: color(mid-2);
   padding: 2rem;
-  // width: 15vw;
-  // white-space: nowrap;
   position: relative;
 
   &:before {
@@ -206,7 +201,6 @@ body {
   p {
     color: color(light-2);
     white-space: normal;
-    // width: 70vw;
 
     font-family: $font-sans-1;
   }
