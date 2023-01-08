@@ -160,7 +160,7 @@ body {
   @include flex(column,10rem);
   justify-content: space-around;
 
-  min-height: 100%;
+  // min-height: 100%;
   padding: 10rem 0 0 2rem;
   width: 70%;
   margin: 0 auto;
@@ -240,7 +240,8 @@ body {
     height: 80vh;
     margin: 40% 0 0 5%;
     font-size: 1rem;
-    padding: 0 !important;
+    padding: 0;
+    justify-content: flex-end;
 
     .scroll-down {
       margin-bottom: 5rem;
@@ -370,8 +371,8 @@ body {
   }
 
   &__item {
-    position: relative;
-    // border: 2px solid color(highlight);
+  position: relative;
+  // border: 2px solid color(highlight);
   // background-color: color(highlight-2);
   background-size: 100%;
   border-radius: 5px;
