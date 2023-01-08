@@ -275,7 +275,7 @@ body {
     height: 80vh;
     margin: 40% 0 0 5%;
     font-size: 1rem;
-    padding: 0;
+    padding: 2rem 0 0 0;
     justify-content: flex-end;
   }
   .hero .scroll-down {
