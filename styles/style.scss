@@ -139,7 +139,7 @@ body {
 
 @supports (backdrop-filter: blur()) {
   .navigation {
-    background-color: hsl(0deg 0% 60% / 0.1);
+    background-color: rgba(0, 0, 0, 0.425);
     backdrop-filter: blur(1.75rem);
 
     &__link {
@@ -207,7 +207,7 @@ body {
 
   .main-title {
     font-family: $font-serif;
-    color: color(highlight);
+    color: color(light-2);
     margin-bottom: 1rem;
     font-size: 2.5rem;
   }
@@ -412,6 +412,56 @@ body {
     }
   }
 
+}
+
+.skills {
+  width: 90%;
+  margin: 5rem auto;
+
+  &__title {
+    text-transform: uppercase;
+    text-align: center;
+    margin: 1.25rem 0;
+  }
+
+  &__copy {
+    color: color(light-2);
+    font-family: $font-sans-1;
+    font-size: 1rem;
+  }
+
+  &__grid {
+    margin-top: 2rem;
+    @include grid(1rem);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    &-item {
+      
+      
+
+      header {
+        border-radius: 5px 5px 0 0;
+        padding:1rem;
+        width: 100%;
+        background-color: color(highlight);
+
+        img {
+          height: 32px;
+        }
+      }
+
+      main {
+        height: 200px;
+        // border:2px solid color(dark-2);
+        // border-top: 0;
+        background-color: color(dark-2);
+        border-radius: 0 0 5px 5px;
+      }
+
+    }
+  }
+
+  
 }
 
 @media (min-width: 550px) {
