@@ -433,13 +433,15 @@ body {
   &__grid {
     margin-top: 2rem;
     @include grid(1rem);
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-rows: 1fr;
+    justify-content: center;
 
     &-item {
-      
-      
+      height: 100%;
 
       header {
+        @include flex(row, 2rem);
         border-radius: 5px 5px 0 0;
         padding:1rem;
         width: 100%;
@@ -448,14 +450,30 @@ body {
         img {
           height: 32px;
         }
+
+        h3 {
+          align-self: flex-end;
+          font-family: $font-mono;
+          font-size: 1.2rem;
+          color: color(dark-1);
+        }
       }
 
       main {
-        height: 200px;
-        // border:2px solid color(dark-2);
-        // border-top: 0;
+        padding: 1.5rem;
         background-color: color(dark-2);
         border-radius: 0 0 5px 5px;
+
+        ul {
+          list-style-type: '# ';
+          color: color(light-2);
+          font-family: $font-sans-1;
+         
+
+          li {
+            margin-bottom: 1rem;
+          }
+        }
       }
 
     }
