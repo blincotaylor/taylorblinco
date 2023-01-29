@@ -269,88 +269,6 @@ body {
     opacity: 0;
   }
 }
-@media (max-width: 500px) {
-  .hero {
-    width: 95%;
-    height: 80vh;
-    margin: 50% 0 0 5%;
-    font-size: 1rem;
-    padding: 0;
-    justify-content: flex-end;
-  }
-  .hero .scroll-down {
-    margin-bottom: 5rem;
-  }
-  .hero .introduction p {
-    width: 80vw;
-  }
-  .introduction .main-title {
-    font-size: 1.75rem;
-  }
-  .type-text {
-    font-size: 0.85rem;
-  }
-  .navigation {
-    display: flex;
-    gap: 2.5rem;
-    flex-direction: column;
-    justify-content: initial;
-    position: fixed;
-    z-index: 1000;
-    inset: 0 0 0 20%;
-    margin: 0;
-    padding: min(20vh, 7.5rem) 1.5rem;
-    height: 100vh;
-    transform: translateX(100%);
-    transition: transform 0.35s cubic-bezier(0.5, 0, 0.5, 1);
-  }
-  .navigation[data-visible=true] {
-    transform: translateX(0%);
-  }
-  .navigation-toggle {
-    display: block;
-    background-color: transparent;
-    position: fixed;
-    top: 2rem;
-    right: 2rem;
-    cursor: pointer;
-    z-index: 9999;
-    width: 1.5rem;
-    border: 0;
-    aspect-ratio: 1;
-  }
-  .navigation-toggle[aria-expanded=true] .navigation-toggle__bar {
-    opacity: 0;
-  }
-  .navigation-toggle[aria-expanded=true] .bar-top {
-    transform: translate(-50%, -50%) rotate(-315deg);
-    top: 50%;
-  }
-  .navigation-toggle[aria-expanded=true] .bar-bottom {
-    transform: translate(-50%, -50%) rotate(-225deg);
-    top: 50%;
-  }
-  .navigation-toggle__bar, .navigation-toggle .bar-top, .navigation-toggle .bar-bottom {
-    width: 1.5rem;
-    height: 3px;
-    background-color: hsl(0deg, 0%, 89%);
-    border-radius: 5px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.4s, opacity 0.2s, top 0.4s;
-  }
-  .navigation-toggle .bar-top {
-    top: 15%;
-  }
-  .navigation-toggle .bar-bottom {
-    top: 85%;
-  }
-  .navigation-toggle .introduction p {
-    width: unset;
-  }
-}
 .highlight {
   color: hsl(212deg, 100%, 65%);
 }
@@ -468,6 +386,89 @@ body {
   margin-bottom: 1rem;
 }
 
+.contact {
+  height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  gap: 3rem;
+  place-content: center;
+}
+.contact__title {
+  text-align: center;
+}
+.contact__form form {
+  width: 60vw;
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: column;
+}
+.contact__form form input[type=text],
+.contact__form form input[type=email],
+.contact__form form input[type=password],
+.contact__form form input[type=number],
+.contact__form form input[type=tel],
+.contact__form form textarea {
+  width: 100%;
+  height: 40px;
+  padding: 0.2rem;
+  border: none;
+  border-bottom: 1px solid hsl(212deg, 100%, 65%);
+  background-color: transparent;
+  border-radius: 0;
+  font-family: "MontSerrat", sans-serif;
+  font-size: inherit;
+  color: hsl(0deg, 0%, 89%);
+}
+.contact__form form input[type=text]::-moz-placeholder, .contact__form form input[type=email]::-moz-placeholder, .contact__form form input[type=password]::-moz-placeholder, .contact__form form input[type=number]::-moz-placeholder, .contact__form form input[type=tel]::-moz-placeholder, .contact__form form textarea::-moz-placeholder {
+  color: hsl(0deg, 0%, 89%);
+  font-size: 1rem;
+}
+.contact__form form input[type=text]:-ms-input-placeholder, .contact__form form input[type=email]:-ms-input-placeholder, .contact__form form input[type=password]:-ms-input-placeholder, .contact__form form input[type=number]:-ms-input-placeholder, .contact__form form input[type=tel]:-ms-input-placeholder, .contact__form form textarea:-ms-input-placeholder {
+  color: hsl(0deg, 0%, 89%);
+  font-size: 1rem;
+}
+.contact__form form input[type=text]::placeholder,
+.contact__form form input[type=email]::placeholder,
+.contact__form form input[type=password]::placeholder,
+.contact__form form input[type=number]::placeholder,
+.contact__form form input[type=tel]::placeholder,
+.contact__form form textarea::placeholder {
+  color: hsl(0deg, 0%, 89%);
+  font-size: 1rem;
+}
+.contact__form form input[type=text]:focus,
+.contact__form form input[type=email]:focus,
+.contact__form form input[type=password]:focus,
+.contact__form form input[type=number]:focus,
+.contact__form form input[type=tel]:focus,
+.contact__form form textarea:focus {
+  outline: none;
+  border: 1px solid hsl(0deg, 0%, 79%);
+}
+.contact__form label {
+  display: none;
+}
+.contact__form button {
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid hsl(212deg, 100%, 65%);
+  color: hsl(212deg, 100%, 65%);
+  transition: background-color 0.1s ease-in-out;
+  font-family: "MontSerrat", sans-serif;
+  font-weight: 600;
+}
+.contact__form button:hover {
+  color: hsl(0deg, 0%, 16%);
+  background-color: hsl(212deg, 100%, 65%);
+  transition: background-color 0.1s ease-in-out;
+}
+.contact__form-row {
+  display: flex;
+  gap: 2.5rem;
+  flex-direction: row;
+}
+
 @media (min-width: 550px) {
   .work__items {
     grid-template-columns: 1fr 1fr;
@@ -484,5 +485,101 @@ body {
 @media (min-width: 1700px) {
   .work__items {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 500px) {
+  .hero {
+    width: 95%;
+    height: 80vh;
+    margin: 50% 0 0 5%;
+    font-size: 1rem;
+    padding: 0;
+    justify-content: flex-end;
+  }
+  .hero .scroll-down {
+    margin-bottom: 5rem;
+  }
+  .hero .introduction p {
+    width: 80vw;
+  }
+  .introduction .main-title {
+    font-size: 1.75rem;
+  }
+  .type-text {
+    font-size: 0.85rem;
+  }
+  .navigation {
+    display: flex;
+    gap: 2.5rem;
+    flex-direction: column;
+    justify-content: initial;
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 20%;
+    margin: 0;
+    padding: min(20vh, 7.5rem) 1.5rem;
+    height: 100vh;
+    transform: translateX(100%);
+    transition: transform 0.35s cubic-bezier(0.5, 0, 0.5, 1);
+  }
+  .navigation[data-visible=true] {
+    transform: translateX(0%);
+  }
+  .navigation-toggle {
+    display: block;
+    background-color: transparent;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 9999;
+    width: 1.5rem;
+    border: 0;
+    aspect-ratio: 1;
+  }
+  .navigation-toggle[aria-expanded=true] .navigation-toggle__bar {
+    opacity: 0;
+  }
+  .navigation-toggle[aria-expanded=true] .bar-top {
+    transform: translate(-50%, -50%) rotate(-315deg);
+    top: 50%;
+  }
+  .navigation-toggle[aria-expanded=true] .bar-bottom {
+    transform: translate(-50%, -50%) rotate(-225deg);
+    top: 50%;
+  }
+  .navigation-toggle__bar, .navigation-toggle .bar-top, .navigation-toggle .bar-bottom {
+    width: 1.5rem;
+    height: 3px;
+    background-color: hsl(0deg, 0%, 89%);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.4s, opacity 0.2s, top 0.4s;
+  }
+  .navigation-toggle .bar-top {
+    top: 15%;
+  }
+  .navigation-toggle .bar-bottom {
+    top: 85%;
+  }
+  .navigation-toggle .introduction p {
+    width: unset;
+  }
+  .contact__form button {
+    margin-top: 1rem;
+  }
+  .contact__form form {
+    width: 80vw;
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+  }
+  .contact__form-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
   }
 }/*# sourceMappingURL=style.css.map */
