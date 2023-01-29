@@ -204,26 +204,26 @@ body {
 }
 
 .introduction {
-  padding: 2rem;
+  padding: 2rem 0.5rem;
   position: relative;
 }
 .introduction:before {
   content: "";
-  background: hsl(0deg, 0%, 60%);
+  background: hsl(212deg, 100%, 65%);
   position: absolute;
   top: 0;
   left: 0;
-  width: 60%;
+  width: 65%;
   height: 1px;
 }
 .introduction:after {
   content: "";
-  background: hsl(0deg, 0%, 60%);
+  background: hsl(212deg, 100%, 65%);
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 1px;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  width: 65%;
 }
 .introduction p {
   color: hsl(0deg, 0%, 89%);
@@ -489,18 +489,15 @@ body {
 }
 @media (max-width: 500px) {
   .hero {
-    width: 95%;
+    width: initial;
     height: 80vh;
-    margin: 50% 0 0 5%;
+    margin: 50% 1rem;
     font-size: 1rem;
     padding: 0;
     justify-content: flex-end;
   }
   .hero .scroll-down {
     margin-bottom: 5rem;
-  }
-  .hero .introduction p {
-    width: 80vw;
   }
   .introduction .main-title {
     font-size: 1.75rem;
@@ -565,9 +562,6 @@ body {
   .navigation-toggle .bar-bottom {
     top: 85%;
   }
-  .navigation-toggle .introduction p {
-    width: unset;
-  }
   .contact__form button {
     margin-top: 1rem;
   }
@@ -581,5 +575,8 @@ body {
     display: flex;
     gap: 1.5rem;
     flex-direction: column;
+  }
+  .skills__grid {
+    gap: 2rem;
   }
 }/*# sourceMappingURL=style.css.map */

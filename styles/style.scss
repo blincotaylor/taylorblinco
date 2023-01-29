@@ -160,7 +160,6 @@ body {
   @include flex(column,10rem);
   justify-content: space-around;
 
-  // min-height: 100%;
   padding: 10rem 0 0 2rem;
   width: 70%;
   margin: 0 auto;
@@ -175,27 +174,27 @@ body {
 }
 
 .introduction {
-  padding: 2rem;
+  padding: 2rem .5rem;
   position: relative;
 
   &:before {
     content: "";
-    background: color(mid-2);
+    background: color(highlight);
     position: absolute;
     top: 0;
     left: 0;
-    width: 60%;
+    width: 65%;
     height: 1px;
   }
 
   &:after {
     content: "";
-    background: color(mid-2);
+    background: color(highlight);
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 1px;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    width: 65%;
   }
 
   p {
@@ -482,19 +481,15 @@ body {
 @media (max-width: 500px) {
 
   .hero {
-    width: 95%;
+    width: initial;
     height: 80vh;
-    margin: 50% 0 0 5%;
+    margin: 50% 1rem;
     font-size: 1rem;
     padding: 0;
     justify-content: flex-end;
 
     .scroll-down {
       margin-bottom: 5rem;
-    }
-
-    .introduction p {
-      width: 80vw;
     }
   }
 
@@ -574,13 +569,6 @@ body {
       & .bar-bottom {
         top: 85%;
       }
-
-      .introduction {
-        p {
-          width: unset;
-        }
-        
-      }
     }
   }
 
@@ -601,6 +589,13 @@ body {
         @include flex(column, 1.5rem);
         
       }
+    }
+  }
+
+  .skills {
+
+    &__grid {
+      gap: 2rem;
     }
   }
 }
