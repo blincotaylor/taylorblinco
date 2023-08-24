@@ -42,6 +42,13 @@ Links.forEach((link) => {
   });
 });
 
+Links.forEach((link) => {
+  link.addEventListener("click", () => {
+    Navigation.setAttribute("data-visible", false);
+    NavToggle.setAttribute("aria-expanded", false);
+  });
+});
+
 // Links.addEventListener("mouseover", () => {
 //   Links.forEach((link) => {
 //     link.classList.add("hoverstate");
